@@ -24,5 +24,11 @@ describe "Index author page", type: :feature do
     expect(page).to have_text 'Turing'
     expect(page).to have_text 'http://wikipedia.de/Alan_Turing'
   end
+
+  it 'should have navigation link to edit, show existing authors and new to create authors' do
+    visit authors_path
+
+    expect(page).to have_link 'new', href: new_author_path
+  end
 end
 
