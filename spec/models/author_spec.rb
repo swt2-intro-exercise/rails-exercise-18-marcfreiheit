@@ -20,6 +20,6 @@ RSpec.describe Author, type: :model do
   it 'should not create without a last name' do
     author = Author.new(first_name: 'Alan', homepage: 'http://wikipedia.de/Alan_Turing')
 
-    expect{author.save!}.to raise_error(ActiveRecord::RecordInvalid)
+    expect(author).to_not be_valid
   end
 end
