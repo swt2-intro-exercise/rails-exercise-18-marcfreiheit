@@ -1,7 +1,22 @@
-<h1>Authors#new</h1>
-<p>First Name</p>
-<input name="first_name" />
-<p>Last Name</p>
-<input name="last_name" />
-<p>Homepage</p>
-<input name="homepage" />
+<h1>New author</h1>
+
+<%= form_with scope: :article, url: authors_path, local: true do |form| %>
+  <p>
+    <%= form.label :first_name %><br>
+    <%= form.text_field :first_name %>
+  </p>
+ 
+  <p>
+    <%= form.label :last_name %><br>
+    <%= form.text_field :last_name %>
+  </p>
+
+  <p>
+    <%= form.label :homepage %><br>
+    <%= form.text_field :homepage %>
+  </p>
+ 
+  <p>
+    <%= form.submit %>
+  </p>
+<% end %>
