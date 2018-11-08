@@ -17,4 +17,9 @@ RSpec.describe Author, type: :model do
     expect(@author.name).to eq("#{@author.first_name} #{@author.last_name}")
   end
 
+  it 'should not create without a last name' do
+    author = Author.new(first_name: 'Alan', homepage: 'http://wikipedia.de/Alan_Turing')
+
+    expect{author.save!}.to raise_error(ActiveRecord::RecordInvalid)
+  end
 end
