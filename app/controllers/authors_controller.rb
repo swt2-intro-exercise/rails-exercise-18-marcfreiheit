@@ -1,5 +1,16 @@
 class AuthorsController < ApplicationController
   def new
+    @author = Author.new
+  end
+
+  def create
+    @author = Author.new author_params
+ 
+    if @author.save
+      redirect_to @author
+    else
+      render 'new'
+    end
   end
 
   def show
@@ -9,4 +20,9 @@ class AuthorsController < ApplicationController
   def index
     @authors = Author.all
   end
+
+  private 
+    def author_params
+      params.require(:author).permit :last_name, :first_name, :homepage
+    end
 end
