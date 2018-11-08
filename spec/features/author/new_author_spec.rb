@@ -25,4 +25,15 @@ describe "New author page", type: :feature do
 
     expect(Author.count).to eq(1)
   end
+
+  it 'should show an error when the user missing the last name' do
+    visit new_author_path
+
+    page.fill_in 'author[first_name]', with: 'Alan'
+    page.fill_in 'author[homepage]', with: 'http://wikipedia.de/Alan_Turing'
+
+    find('input[type="submit"]').click
+
+    expect(page).to have_text 'prohibited this author from being saved' 
+  end
 end
