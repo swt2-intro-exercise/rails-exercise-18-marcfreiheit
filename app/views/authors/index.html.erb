@@ -1,0 +1,20 @@
+<h1>Listing authors</h1>
+<table>
+  <thead>
+    <th>Name</th>
+    <th>Homepage</th>
+    <th></th> <!-- edit action -->
+    <th></th> <!-- show action -->
+  </thead>
+  <tbody>
+    <% @authors.each do |author| %>
+      <tr>
+        <td><a href=<%= author_path(author.id) %>><%= author.name %></a>
+        <td><%= author.homepage %></td>
+        <td><a href=<%= author_path(author.id) %>>edit</a>
+        <td><a href=<%= author_path(author.id) %>>delete</a>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+<a href=<%= new_author_path %>>new</a>
