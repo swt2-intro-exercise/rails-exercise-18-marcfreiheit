@@ -1,5 +1,4 @@
 Rails.application.routes.draw do
-  get 'authors/new'
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rails routes".
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
@@ -7,6 +6,7 @@ Rails.application.routes.draw do
   # You can have the root of your site routed with "root"
   root 'home#index'
 
+  resources :authors
   # Example resource route (maps HTTP verbs to controller actions automatically):
   #   resources :products
 
