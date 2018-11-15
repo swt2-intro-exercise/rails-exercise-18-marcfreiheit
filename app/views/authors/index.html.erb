@@ -11,7 +11,7 @@
       <tr>
         <td><a href=<%= author_path(author.id) %>><%= author.name %></a>
         <td><%= author.homepage %></td>
-        <td><a href=<%= author_path(author.id) %>>edit</a>
+        <td><a href=<%= edit_author_path(author.id) %>>edit</a>
         <td><a href=<%= author_path(author.id) %>>delete</a>
       </tr>
     <% end %>
