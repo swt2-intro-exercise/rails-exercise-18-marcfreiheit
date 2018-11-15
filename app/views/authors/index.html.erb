@@ -11,8 +11,10 @@
       <tr>
         <td><a href=<%= author_path(author.id) %>><%= author.name %></a>
         <td><%= author.homepage %></td>
-        <td><a href=<%= edit_author_path(author.id) %>>edit</a>
-        <td><a href=<%= author_path(author.id) %>>delete</a>
+        <td><%= link_to 'Show', author_path(author) %>
+        <td><%= link_to 'Destroy', author_path(author),
+                method: :delete,
+                data: { confirm: 'Are you sure?' } %>
       </tr>
     <% end %>
   </tbody>
