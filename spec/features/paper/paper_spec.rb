@@ -23,5 +23,11 @@ RSpec.describe Paper, type: :model do
 
     expect(paper).to_not be_valid
   end
+
+  it 'should not create without year' do
+    paper = Paper.new(title: 'A title', venue: 'A venue')
+
+    expect(paper).to_not be_valid
+  end
 end
 
