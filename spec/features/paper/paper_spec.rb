@@ -18,5 +18,10 @@ RSpec.describe Paper, type: :model do
     expect(paper).to_not be_valid
   end
 
+  it 'should not create without venue' do
+    paper = Paper.new(title: 'A title', year: 1950)
+
+    expect(paper).to_not be_valid
+  end
 end
 
