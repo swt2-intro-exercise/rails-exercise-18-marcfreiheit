@@ -6,7 +6,6 @@ RSpec.describe "papers/new", type: :view do
       :title => "MyString",
       :venue => "MyString",
       :year => 1,
-      :author => nil
     ))
   end
 

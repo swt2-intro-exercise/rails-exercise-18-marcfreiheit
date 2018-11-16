@@ -3,6 +3,5 @@ FactoryBot.define do
     title { 'A paper title' }
     venue { 'A venue' }
     year { 1 }
-    author
   end
 end
