@@ -1,8 +1,8 @@
 FactoryBot.define do
   factory :paper do
-    title { "MyString" }
-    venue { "MyString" }
+    title { 'A paper title' }
+    venue { 'A venue' }
     year { 1 }
-    author { nil }
+    author
   end
 end

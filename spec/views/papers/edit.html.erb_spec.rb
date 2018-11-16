@@ -2,12 +2,7 @@ require 'rails_helper'
 
 RSpec.describe "papers/edit", type: :view do
   before(:each) do
-    @paper = assign(:paper, Paper.create!(
-      :title => "MyString",
-      :venue => "MyString",
-      :year => 1,
-      :author => nil
-    ))
+    @paper = FactoryBot.create :paper  
   end
 
   it "renders the edit paper form" do
