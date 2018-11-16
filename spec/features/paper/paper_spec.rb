@@ -29,5 +29,21 @@ RSpec.describe Paper, type: :model do
 
     expect(paper).to_not be_valid
   end
+
+  it 'should not accept non-integer values as year' do
+    paper = Paper.new(title: 'A title', venue: 'A venue')
+
+    paper.year = 'String year'
+    expect(paper).to_not be_valid
+
+    paper.year = 295.53
+    expect(paper).to_not be_valid
+  end
+
+  it 'should accept integers as year' do
+    paper = Paper.new(title: 'A title', venue: 'A venue', year: 1950)
+
+    expect(paper).to be_valid
+  end
 end
 
